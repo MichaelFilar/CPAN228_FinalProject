@@ -1,6 +1,6 @@
 package com.example.FinalProject.repository;
 
-import com.example.FinalProject.model.Journal;
+import com.example.FinalProject.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -11,11 +11,5 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface JournalRepository extends JpaRepository<Journal, Long> {
-
-    @Query("SELECT j FROM Journal j WHERE j.userID = ?1")
-    List<Journal> findByUser(Integer userID);
-
-    @Query("SELECT j FROM Journal j WHERE j.date = ?1")
-    Optional<Journal> findByDate(LocalDate date);
+public interface UserRepository extends JpaRepository<User, Long> {
 }

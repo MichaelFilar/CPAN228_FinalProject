@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Journal</h2>
-<form th:action="@{/journals/add}" th:object="${journal}" method="post">
+<form th:action="@{/journals}" th:object="${inJournal}" method="post">
     <label>
         <textarea placeholder="Journal entry..." name="contents" id="contents" field="*{contents}" rows="10" cols="50"></textarea>
     </label>

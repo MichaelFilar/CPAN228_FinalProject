@@ -2,6 +2,7 @@ package com.example.FinalProject.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,7 @@ public class Journal {
     private Long id;
     private Long userID;
     private String contents;
-    private Date date;
+    private LocalDate date;
 
     public Long getId() {
         return id;
@@ -38,11 +39,11 @@ public class Journal {
         this.contents = contents;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 }

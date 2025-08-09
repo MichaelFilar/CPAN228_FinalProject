@@ -3,13 +3,13 @@ package com.example.FinalProject.controller;
 import com.example.FinalProject.model.Journal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import com.example.FinalProject.repository.JournalRepository;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/journals")
@@ -21,15 +21,18 @@ public class JournalController {
 
     @GetMapping
     public String list(Model model) {
-        model.addAttribute("journals", journalRepository.findAll());
+        model.addAttribute("journals", journalRepository.findByUser(123));
         return "journal";
     }
 
-    @PostMapping("/add")
-    public String saveJournal(@ModelAttribute Journal journal) {
-        journal.setDate(new Date());
-        journal.setUserID(123L);
-        journalRepository.save(journal);
+    @PostMapping()
+    public String saveJournal(@ModelAttribute Journal inJournal, Model model) {
+        System.out.println("post "+inJournal);
+        inJournal.setUserID(123L);
+        inJournal.setDate(LocalDate.now());
+        Journal dailyJournal = (journalRepository.findByDate(LocalDate.now())).orElse(inJournal);
+        dailyJournal.setContents(inJournal.getContents());
+        journalRepository.save(dailyJournal);
         return "redirect:/journals";
     }
 }
