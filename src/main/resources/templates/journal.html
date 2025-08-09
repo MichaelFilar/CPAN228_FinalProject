@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Journal</title>
+</head>
+<body>
+<h2>Journal</h2>
+<form th:action="@{/journals/add}" th:object="${journal}" method="post">
+    <label>
+        <textarea placeholder="Journal entry..." name="contents" id="contents" field="*{contents}" rows="10" cols="50"></textarea>
+    </label>
+    <button type="submit">Save Journal</button>
+</form>
+<h2>Past journals</h2>
+<ul th:each="journal : ${journals}">
+    <pre th:text="${journal.date}"></pre>
+    <pre th:text="${journal.contents}"></pre>
+</ul>
+</body>
+</html>
