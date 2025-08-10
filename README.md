@@ -1,3 +1,5 @@
+All the database code/schemas for creating the correct databases (on XAMPP) are below:
+
 Journal Database code
 CREATE TABLE `journals` (
   `id` bigint(20) NOT NULL,
