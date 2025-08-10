@@ -25,7 +25,7 @@ public class JournalController {
         return "journal";
     }
 
-    @PostMapping()
+    @PostMapping
     public String saveJournal(@ModelAttribute Journal inJournal, Model model) {
         System.out.println("post "+inJournal);
         inJournal.setUserID(123L);

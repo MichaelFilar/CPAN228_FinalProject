@@ -1,0 +1,49 @@
+package com.example.FinalProject.model;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+import java.util.Date;
+
+@Entity
+@Table(name = "moods")
+public class Mood {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long userID;
+    private int moodvalue;
+    private LocalDate date;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getUserID() {
+        return userID;
+    }
+
+    public void setUserID(Long userID) {
+        this.userID = userID;
+    }
+
+    public int getMoodvalue() {
+        return moodvalue;
+    }
+
+    public void setMoodvalue(int moodvalue) {
+        this.moodvalue = moodvalue;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+}

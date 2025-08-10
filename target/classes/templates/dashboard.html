@@ -5,6 +5,19 @@
     <title>Dashboard</title>
 </head>
 <body>
+<h1>Dashboard</h1>
+<form th:action="@{/}" th:object="${inMood}" method="post">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="1" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="2" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="3" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="4" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="5" onclick="this.form.submit()">
+</form>
 
+    <h2>Past Moods</h2>
+    <ul th:each="mood : ${moods}">
+        <pre th:text="${mood.date}"></pre>
+        <pre th:text="${mood.moodvalue}"></pre>
+    </ul>
 </body>
 </html>
