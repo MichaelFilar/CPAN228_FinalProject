@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
+<nav>
+<ul>
+    <li><a href="/" class="active">Dashboard</a></li>
+    <li><a href="/journals">Journal</a></li>
+</ul>
+</nav>
+<div class="container">
 <h1>Dashboard</h1>
 <h2>How are you feeling today?</h2>
 <form th:action="@{/}" th:object="${inMood}" method="post">
     <input field="*{moodvalue}" name="moodvalue" type="radio" value="1" onclick="this.form.submit()">
     <input field="*{moodvalue}" name="moodvalue" type="radio" value="2" onclick="this.form.submit()">
-    <input field="*{moodvalue}" name="moodvalue" type="radio" value="3" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvaalue" type="radio" value="3" onclick="this.form.submit()">
     <input field="*{moodvalue}" name="moodvalue" type="radio" value="4" onclick="this.form.submit()">
     <input field="*{moodvalue}" name="moodvalue" type="radio" value="5" onclick="this.form.submit()">
 </form>
@@ -20,5 +28,6 @@
         <pre th:text="${mood.date}"></pre>
         <pre th:text="${mood.moodvalue}"></pre>
     </ul>
+</div>
 </body>
 </html>

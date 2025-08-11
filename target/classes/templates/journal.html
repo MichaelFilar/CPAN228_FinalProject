@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>My Journal</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
+<nav>
+<ul>
+    <li><a href="/">Dashboard</a></li>
+    <li><a href="/journals" class="active">Journal</a></li>
+</ul>
+</nav>
+<div class="container">
 <h2>Journal</h2>
 <form th:action="@{/journals}" th:object="${inJournal}" method="post">
     <label>
@@ -17,5 +25,6 @@
     <pre th:text="${journal.date}"></pre>
     <pre th:text="${journal.contents}"></pre>
 </ul>
+</div>
 </body>
 </html>
