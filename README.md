@@ -18,11 +18,11 @@ Mood database code
 CREATE TABLE `moods` (
   `id` bigint(20) NOT NULL,
   `userID` bigint(20) NOT NULL,
-  `moodvalue` int(11) NOT NULL,
+  `moodvalue` varchar(11) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 Sample data
 INSERT INTO `moods` (`id`, `userID`, `moodvalue`, `date`) VALUES
-(1, 123, 4, '2025-08-09'),
-(2, 123, 4, '2025-08-10');
+(1, 123, 'Happy, '2025-08-09'),
+(2, 123, 'Sad', '2025-08-10');
