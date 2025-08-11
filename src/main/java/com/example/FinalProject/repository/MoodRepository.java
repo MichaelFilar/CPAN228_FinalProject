@@ -14,9 +14,9 @@ import java.util.Optional;
 @Repository
 public interface MoodRepository extends JpaRepository<Mood, Long> {
 
-    @Query("SELECT j FROM Mood j WHERE j.userID = ?1")
+    @Query("SELECT j FROM Mood j WHERE j.userID = ?1  order by date desc")
     List<Mood> findByUser(Integer userID);
 
-    @Query("SELECT j FROM Mood j WHERE j.date = ?1")
+    @Query("SELECT j FROM Mood j WHERE j.date = ?1 order by date desc")
     Optional<Mood> findByDate(LocalDate date);
 }

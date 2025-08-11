@@ -16,17 +16,19 @@
 <h1>Dashboard</h1>
 <h2>How are you feeling today?</h2>
 <form th:action="@{/}" th:object="${inMood}" method="post">
-    <input field="*{moodvalue}" name="moodvalue" type="radio" value="1" onclick="this.form.submit()">
-    <input field="*{moodvalue}" name="moodvalue" type="radio" value="2" onclick="this.form.submit()">
-    <input field="*{moodvalue}" name="moodvaalue" type="radio" value="3" onclick="this.form.submit()">
-    <input field="*{moodvalue}" name="moodvalue" type="radio" value="4" onclick="this.form.submit()">
-    <input field="*{moodvalue}" name="moodvalue" type="radio" value="5" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="Happy" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="Good" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="Ok" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="Bummed out" onclick="this.form.submit()">
+    <input field="*{moodvalue}" name="moodvalue" type="radio" value="Sad" onclick="this.form.submit()">
 </form>
 
     <h2>Past Moods</h2>
     <ul th:each="mood : ${moods}">
-        <pre th:text="${mood.date}"></pre>
-        <pre th:text="${mood.moodvalue}"></pre>
+        <li>
+            <pre>On <p th:text="${mood.date}"></p></pre>
+            <pre>I felt <p th:text="${mood.moodvalue}"></p></pre>
+        </li>
     </ul>
 </div>
 </body>

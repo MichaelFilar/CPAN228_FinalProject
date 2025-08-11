@@ -22,8 +22,10 @@
 </form>
 <h2>Past journals</h2>
 <ul th:each="journal : ${journals}">
-    <pre th:text="${journal.date}"></pre>
-    <pre th:text="${journal.contents}"></pre>
+    <li>
+        <pre th:text="${journal.date}"></pre>
+        <pre th:text="${journal.contents}"></pre>
+    </li>
 </ul>
 </div>
 </body>

@@ -13,9 +13,9 @@ import java.util.Optional;
 @Repository
 public interface JournalRepository extends JpaRepository<Journal, Long> {
 
-    @Query("SELECT j FROM Journal j WHERE j.userID = ?1")
+    @Query("SELECT j FROM Journal j WHERE j.userID = ?1 order by date desc")
     List<Journal> findByUser(Integer userID);
 
-    @Query("SELECT j FROM Journal j WHERE j.date = ?1")
+    @Query("SELECT j FROM Journal j WHERE j.date = ?1 order by date desc")
     Optional<Journal> findByDate(LocalDate date);
 }

@@ -73,6 +73,16 @@ nav a.active {
     padding: 20px;
 }
 
+.listItem {
+    background: rgba(253, 240, 213, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(58, 79, 65, 0.15);
+        margin-bottom: 2rem;
+        border: 1px solid rgba(198, 216, 211, 0.3);
+        backdrop-filter: blur(10px);
+}
+
 h1 {
     font-size: 2.5rem;
     text-align: center;
@@ -140,7 +150,7 @@ input[type="radio"]:checked {
     box-shadow: 0 0 20px rgba(58, 79, 65, 0.3);
 }
 
-input[type="radio"][value="1"]:after {
+input[type="radio"][value="Sad"]:after {
     content: "😢";
     position: absolute;
     top: 50%;
@@ -149,7 +159,7 @@ input[type="radio"][value="1"]:after {
     font-size: 1.5rem;
 }
 
-input[type="radio"][value="2"]:after {
+input[type="radio"][value="Bummed out"]:after {
     content: "😕";
     position: absolute;
     top: 50%;
@@ -158,7 +168,7 @@ input[type="radio"][value="2"]:after {
     font-size: 1.5rem;
 }
 
-input[type="radio"][value="3"]:after {
+input[type="radio"][value="Ok"]:after {
     content: "😐";
     position: absolute;
     top: 50%;
@@ -167,7 +177,7 @@ input[type="radio"][value="3"]:after {
     font-size: 1.5rem;
 }
 
-input[type="radio"][value="4"]:after {
+input[type="radio"][value="Good"]:after {
     content: "🙂";
     position: absolute;
     top: 50%;
@@ -176,7 +186,7 @@ input[type="radio"][value="4"]:after {
     font-size: 1.5rem;
 }
 
-input[type="radio"][value="5"]:after {
+input[type="radio"][value="Happy"]:after {
     content: "😊";
     position: absolute;
     top: 50%;

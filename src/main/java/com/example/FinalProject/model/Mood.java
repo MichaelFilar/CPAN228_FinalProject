@@ -12,7 +12,7 @@ public class Mood {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userID;
-    private int moodvalue;
+    private String moodvalue;
     private LocalDate date;
 
     public Long getId() {
@@ -31,11 +31,11 @@ public class Mood {
         this.userID = userID;
     }
 
-    public int getMoodvalue() {
+    public String getMoodvalue() {
         return moodvalue;
     }
 
-    public void setMoodvalue(int moodvalue) {
+    public void setMoodvalue(String moodvalue) {
         this.moodvalue = moodvalue;
     }
 
